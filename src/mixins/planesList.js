@@ -6,7 +6,7 @@ const planes =
         price: 'Grátis',
         monthlyPaymentDescription: 'você não paga nada para usar sem taxa de setup',
         description: 'Ideal para quem está começando.',
-        serverDescription: 'Seu site em servidores no Estados Unidos',
+        serverDescription: 'Seu site em servidores no Estados Unidos.',
         listOne: [
             'Servidores em nossos data center americanos;',
             'ASP,ASP.NET 2.0/3.0/3.5/ e 4.0/4.5/4.5.1/4.5.2 (medium trust) ou PHP 5.3, 5.4, 5.5, 5.6 e 7.0;',
@@ -38,7 +38,7 @@ const planes =
         price: 'R$499/mês',
         monthlyPaymentDescription: 'cobrado mensalmente sem taxa de setup',
         description: 'Ideal para sites com mais de 30k de visitas.',
-        serverDescription: 'Seu site em servidores no Brasil',
+        serverDescription: 'Seu site em servidores no Brasil.',
         listOne: [
             'Servidores em nosso data center de São Paulo;',
             'ASP,ASP.NET 2.0/3.0/3.5/ e 4.0/4.5/4.5.1/4.5.2 (medium trust) ou PHP 5.3, 5.4, 5.5, 5.6 e 7.0;',
@@ -72,7 +72,7 @@ const planes =
         price: 'R$999/mês',
         monthlyPaymentDescription: 'cobrado mensalmente sem taxa de setup',
         description: 'Ideal para sites com mais de 60k de visitas.',
-        serverDescription: 'Seu site em servidores no Brasil',
+        serverDescription: 'Seu site em servidores no Brasil.',
         listOne: [
             'Servidores em nosso data center de São Paulo;',
             'ASP,ASP.NET 2.0/3.0/3.5/ e 4.0/4.5/4.5.1/4.5.2 (medium trust) ou PHP 5.3, 5.4, 5.5, 5.6 e 7.0;',

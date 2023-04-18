@@ -74,7 +74,11 @@ export default {
   },
   
   methods: {
-    login() {},
+    login() {
+      this.$router.push({
+        name: 'home',
+      })
+    },
   }
 }
 </script>

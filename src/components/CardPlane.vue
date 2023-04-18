@@ -3,6 +3,7 @@
     <b-card
       class="d-flex justify-content-center align-items-center border-0"
       :title="planeItem.name"
+      :header="moreUsed()"
     >
       <b-card-text class="price-text" align="center">
         {{ planeItem.price  }}
@@ -111,27 +112,29 @@ export default {
     }
   },
 
+  mounted() {
+    this.moreUsed()
+  },
+
   methods: {
     selectPlane(planeItem) {
       this.$router.push({
         name: 'register',
         params: { id: planeItem.id },
       })
+    },
+    moreUsed() {
+      if (this.planeItem.id === '002' && !this.isEdition) {
+        return 'MAIS USADO'
+      } else if (this.isEdition) {
+        return 'PLANO ESCOLHIDO'
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-
-/* .plane-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5 !important;
-} */
-
 .card-body {
   width: 21rem !important;
   padding: 3rem !important;
@@ -143,7 +146,18 @@ export default {
   margin-left: 1.6rem;
   color: #545454;
 }
-
+.card-header {
+  background-color: #10C300;
+  color: white;
+  border-radius: 0.7rem;
+  margin-top: -2.55rem;
+}
+/* .card-header {
+  background-color: #000000;
+  color: white;
+  border-radius: 0.7rem;
+  margin-top: -2.55rem;
+} */
 .price-text {
   color: #F30C6A !important;
   font-size: 1.8rem;
@@ -162,13 +176,18 @@ export default {
 }
 
 .server-desc-text {
+  color: #545454;
   margin-top: 0.6rem;
   font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: underline
 }
 
 .generic-bold-text {
+  color: #545454;
   margin-top: 1rem;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .v-for-item-text {

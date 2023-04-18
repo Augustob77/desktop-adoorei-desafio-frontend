@@ -10,6 +10,7 @@
       <b-col
         v-for="planeItem in planes"
         :key="planeItem.id"
+        class="my-5"
       >
         <card-plane
           :plane-item="planeItem"

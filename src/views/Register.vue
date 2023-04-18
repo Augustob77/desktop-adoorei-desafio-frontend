@@ -7,7 +7,10 @@
         <p class="text-two"> hospedar seu site </p>
       </b-col>
       <b-col>
-        <b-card title="Dados Pessoais">
+        <b-card
+          title="Dados Pessoais" 
+          class="my-5"
+        >
           <b-card-text>
             Informe seus dados pessoais para acesso à sua conta
           </b-card-text>
@@ -20,6 +23,7 @@
                 class="my-4"
                 placeholder="informe seu nome completo"
                 size="lg"
+                v-model="form.name"
               />
             </b-form-group>
 
@@ -31,6 +35,7 @@
                 :mask="'(##) #####-####'"
                 placeholder="(99) 99999-0000"
                 size="lg"
+                v-model="form.cell"
               />
             </b-form-group>
 
@@ -41,6 +46,7 @@
                 class="my-4"
                 placeholder="Seu e-mail"
                 size="lg"
+                v-model="form.email"
               />
             </b-form-group>
 
@@ -49,6 +55,7 @@
                 id="password"
                 type="password"
                 size="lg"
+                v-model="form.password"
               />
 
               <div class="my-2">
@@ -62,11 +69,12 @@
                 type="password"
                 class="my-2"
                 size="lg"
+                v-model="form.passwordConfirm"
               />
             </b-form-group>
 
             <hr class="invoice-spacing">
-            <b-card-text>
+            <b-card-text class="title-text">
               Dados do seu site
             </b-card-text>
 
@@ -76,6 +84,7 @@
                 type="text"
                 placeholder="Meu site"
                 size="lg"
+                v-model="form.siteName"
               />
 
               <div class="my-2">
@@ -88,6 +97,7 @@
                 id="checkbox"
                 name="checkbox"
                 class="checkbox-item"
+                v-model="form.checkbox"
                 :value="true"
                 :unchecked-value="false"
             >
@@ -98,13 +108,17 @@
                 class="my-3 border-0"
                 type="button"
                 block
+                @click="register()"
             >
                 CRIAR CONTA
             </b-button>
           </b-form>
         </b-card>
       </b-col>
-      <b-col cols="4">
+      <b-col
+        cols="4"
+        class="my-5"
+      >
         <card-plane
           :plane-item="planeItem"
           :is-edition="true"
@@ -117,6 +131,7 @@
 <script>
 import CardPlane from '@/components/CardPlane.vue'
 import planesList from '@/mixins/planesList'
+import axios from 'axios'
 
 export default {
     components: {
@@ -128,12 +143,66 @@ export default {
     data() {
       return {
         planeItem: null,
+        form: {
+          name: '',
+          cell: '',
+          email: '',
+          password: '',
+          passwordConfirm: '',
+          siteName: '',
+          checkbox: false
+        }
       }
     },
   
     mounted() {
       const { id } = this.$router.currentRoute.params
       this.planeItem = planesList.find(item => item.id === id)
+
+      this.planeItem ? this.planeItem : this.planeItem = planesList[0]
+    },
+
+    methods: {
+      register() {
+        const userRequest = {
+          method: 'POST',
+          url: 'https://fakestoreapi.com/users',
+          data: JSON.stringify({
+            email: this.form.email,
+            username: this.form.name,
+            password: this.form.password,
+            name:{
+              firstname:'Teste',
+              lastname:'User'
+            },
+            address:{
+              city:'kilcoole',
+              street:'7835 new road',
+              number:3,
+              zipcode:'12926-3874',
+              geolocation:{
+                lat:'-37.3159',
+                long:'81.1496'
+              }
+            },
+            phone: this.form.cell
+          }),
+        }
+
+        axios(userRequest)
+        .then(response => {
+          console.log(response.id)
+
+          this.$router.push({
+            name: 'home',
+            params: { userName: this.form.name },
+          })
+        })
+        .catch(error => {
+          console.log(error)
+        })
+        .finally(() => console.log('Finally'))
+      }
     }
 }
 </script>
@@ -166,13 +235,11 @@ button {
   background-color: #F30C6A !important; 
   color: white;
 }
-
 .text-one {
   margin-top: 2rem !important;
   font-weight: bold !important;
   font-size: 1.7rem !important;
 }
-
 .text-two {
   color: #F30C6A !important;
   text-decoration: underline;
@@ -180,10 +247,14 @@ button {
   font-weight: bold !important;
   margin-top: -1.5rem !important;
 }
-
 .text-three {
   font-weight: normal;
   font-size: 1rem !important;
+}
+.title-text{
+  font-weight: bold;
+  font-size: 1.8rem !important;
+  color: rgb(29, 29, 29) !important;
 }
 .card-body {
   padding: 2rem !important;
@@ -197,9 +268,6 @@ button {
   margin-top: -0.25rem;
   color: rgb(68, 68, 68);
 }
-/* .card {
-    margin-left: 4rem;
-} */
 
 input {
   border-radius: 0.3rem !important;
