@@ -1,17 +1,33 @@
 <template>
-   <div>
-      <span> TODO: Continuar com a criação da página de cadastro - Selecionar Plano </span>
+  <div>
+    <div
+      v-for="(planeItem, index) in planes"
+      :key="index"
+      class="component-card"
+    >
+      <card-plane
+        :plane-item="planeItem"
+      />
     </div>
-  </template>
+  </div>
+</template>
   
-  <script>
-  export default {
-    data() {
-      return {
-      }
-    },
-    methods: {
-    },
-  };
-  </script>
+<script>
+import CardPlane from '@/components/CardPlane.vue'
+import planesList from '@/mixins/planesList'
+
+export default {
+  components: {
+    CardPlane,
+  },
+  
+  mixins: [planesList],
+
+  data() {
+    return {
+      planes: planesList,
+    }
+  },
+};
+</script>
   
