@@ -1,9 +1,113 @@
 <template>
   <div class="card-container">
     <b-row>
+      <b-col cols="12" align="center">
+        <img src="../assets/logo.png" alt="">
+        <p class="text-one"> Você está muito próximo de mudar a forma de </p>
+        <p class="text-two"> hospedar seu site </p>
+      </b-col>
       <b-col>
+        <b-card title="Dados Pessoais">
+          <b-card-text>
+            Informe seus dados pessoais para acesso à sua conta
+          </b-card-text>
+
+          <b-form>
+            <b-form-group label="Nome completo">
+              <b-form-input
+                id="name"
+                type="text"
+                class="my-4"
+                placeholder="informe seu nome completo"
+                size="lg"
+              />
+            </b-form-group>
+
+            <b-form-group label="Celular">
+              <b-form-input
+                id="cell"
+                type="text-mask"
+                class="my-4"
+                :mask="'(##) #####-####'"
+                placeholder="(99) 99999-0000"
+                size="lg"
+              />
+            </b-form-group>
+
+            <b-form-group label="E-mail">
+              <b-form-input
+                id="email"
+                type="email"
+                class="my-4"
+                placeholder="Seu e-mail"
+                size="lg"
+              />
+            </b-form-group>
+
+            <b-form-group label="Senha">
+              <b-form-input
+                id="password"
+                type="password"
+                size="lg"
+              />
+
+              <div class="my-2">
+                <span> No mínimo 8 caracteres</span>
+              </div>
+            </b-form-group>
+
+            <b-form-group label="Confirme sua senha">
+              <b-form-input
+                id="passwordConfirm"
+                type="password"
+                class="my-2"
+                size="lg"
+              />
+            </b-form-group>
+
+            <hr class="invoice-spacing">
+            <b-card-text>
+              Dados do seu site
+            </b-card-text>
+
+            <b-form-group label="Nome do seu site">
+              <b-form-input
+                id="siteName"
+                type="text"
+                placeholder="Meu site"
+                size="lg"
+              />
+
+              <div class="my-2">
+                <span> Exatamente igual o título do seu site</span>
+              </div>
+            </b-form-group>
+            <hr class="invoice-spacing">
+
+            <b-form-checkbox
+                id="checkbox"
+                name="checkbox"
+                class="checkbox-item"
+                :value="true"
+                :unchecked-value="false"
+            >
+            <p class="text-check"> Ao concluir com seu cadastro você concorda com nossos termos de uso e políticas de privacidade. </p>
+            </b-form-checkbox>
+
+            <b-button
+                class="my-3 border-0"
+                type="button"
+                block
+            >
+                CRIAR CONTA
+            </b-button>
+          </b-form>
+        </b-card>
+      </b-col>
+      <b-col cols="4">
         <card-plane
           :plane-item="planeItem"
+          :is-edition="true"
         />
       </b-col>
     </b-row>
@@ -39,8 +143,73 @@ export default {
   display: flex;
   height: 100%;
   justify-content: center;
-  padding: 6rem;
+  padding: 9rem;
+  margin-top: -5rem !important;
   background-color: #f5f5f5 !important;
+}
+
+img {
+  width: 200px;
+}
+
+span {
+  font-size: 0.9rem !important;
+  color: #737373 !important;
+}
+
+button {
+  border-radius: 0.3rem !important;
+  border: none;
+  height: 4rem !important;
+  width: 100%;
+  font-size: 1.2rem !important;
+  background-color: #F30C6A !important; 
+  color: white;
+}
+
+.text-one {
+  margin-top: 2rem !important;
+  font-weight: bold !important;
+  font-size: 1.7rem !important;
+}
+
+.text-two {
+  color: #F30C6A !important;
+  text-decoration: underline;
+  font-size: 1.7rem !important;
+  font-weight: bold !important;
+  margin-top: -1.5rem !important;
+}
+
+.text-three {
+  font-weight: normal;
+  font-size: 1rem !important;
+}
+.card-body {
+  padding: 2rem !important;
+}
+.card-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+.card-text {
+  font-size: 1.2rem;
+  margin-top: -0.25rem;
+  color: rgb(68, 68, 68);
+}
+/* .card {
+    margin-left: 4rem;
+} */
+
+input {
+  border-radius: 0.3rem !important;
+  height: 4rem !important;
+  font-size: 1rem !important;
+  border-color: #a3a3a3 !important;
+}
+.text-check {
+  margin-left: 1.2rem !important;
+  margin-top: -1.65rem;
 }
 
 </style>

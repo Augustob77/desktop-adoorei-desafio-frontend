@@ -13,6 +13,7 @@
       >
         <card-plane
           :plane-item="planeItem"
+          :is-edition="false"
         />
       </b-col>
     </b-row> 
@@ -44,26 +45,25 @@ export default {
   height: 100%;
   justify-content: center;
   padding: 6rem;
+  margin-top: -3rem !important;
   background-color: #f5f5f5 !important;
 }
 
 img {
-  width: 250px;
+  width: 200px;
 }
-
 .text-one {
-  margin-top: 1rem !important;
+  margin-top: 2rem !important;
   font-weight: bold !important;
-  font-size: 1.9rem !important;
+  font-size: 1.7rem !important;
 }
-
 .text-two {
   color: #F30C6A !important;
   text-decoration: underline;
-  font-size: 1.9rem !important;
+  font-size: 1.7rem !important;
+  font-weight: bold !important;
   margin-top: -1.5rem !important;
 }
-
 .text-three {
   font-weight: normal;
   font-size: 1rem !important;

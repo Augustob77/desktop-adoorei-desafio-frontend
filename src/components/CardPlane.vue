@@ -19,6 +19,7 @@
       <hr class="invoice-spacing">
 
       <b-button
+        v-if="!isEdition"
         class="my-3 border-0"
         type="button"
         block
@@ -97,6 +98,10 @@ export default {
     planeItem: {
       type: Object,
       default: () => {},
+    },
+    isEdition: {
+      type: Boolean,
+      default: false,
     }
   },
 
