@@ -22,6 +22,7 @@
         class="my-3 border-0"
         type="button"
         block
+        @click="selectPlane(planeItem)"
       >
         ESCOLHER ESSE PLANO
       </b-button>
@@ -102,6 +103,15 @@ export default {
   data() {
     return {
 
+    }
+  },
+
+  methods: {
+    selectPlane(planeItem) {
+      this.$router.push({
+        name: 'register',
+        params: { id: planeItem.id },
+      })
     }
   }
 }

@@ -3,6 +3,9 @@
     <b-row>
       <b-col cols="12" align="center">
         <img src="../assets/logo.png" alt="">
+        <p class="text-one"> Você está muito próximo de mudar a forma de </p>
+        <p class="text-two"> hospedar seu site </p>
+        <p class="text-three"> Escolha o seu plano </p>
       </b-col>
       <b-col
         v-for="planeItem in planes"
@@ -46,6 +49,24 @@ export default {
 
 img {
   width: 250px;
+}
+
+.text-one {
+  margin-top: 1rem !important;
+  font-weight: bold !important;
+  font-size: 1.9rem !important;
+}
+
+.text-two {
+  color: #F30C6A !important;
+  text-decoration: underline;
+  font-size: 1.9rem !important;
+  margin-top: -1.5rem !important;
+}
+
+.text-three {
+  font-weight: normal;
+  font-size: 1rem !important;
 }
 
 

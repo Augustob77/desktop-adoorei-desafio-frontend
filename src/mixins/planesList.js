@@ -33,7 +33,7 @@ const planes =
         ]
     },
     {
-        id: '001',
+        id: '002',
         name: 'Hospedagem 2',
         price: 'R$499/mês',
         monthlyPaymentDescription: 'cobrado mensalmente sem taxa de setup',
@@ -67,7 +67,7 @@ const planes =
         ]
     },
     {
-        id: '001',
+        id: '003',
         name: 'Hospedagem 3',
         price: 'R$999/mês',
         monthlyPaymentDescription: 'cobrado mensalmente sem taxa de setup',
