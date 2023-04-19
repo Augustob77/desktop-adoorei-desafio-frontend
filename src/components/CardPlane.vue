@@ -89,6 +89,16 @@
           {{ '✔' + item }}
         </b-card-text>
       </div>
+
+      <b-button
+        v-if="isEdition"
+        class="my-3 btn-switch"
+        type="button"
+        block
+        @click="switchPlane()"
+      >
+        Trocar plano
+      </b-button>
     </b-card>
   </div>
 </template>
@@ -121,6 +131,11 @@ export default {
       this.$router.push({
         name: 'register',
         params: { id: planeItem.id },
+      })
+    },
+    switchPlane() {
+      this.$router.push({
+        name: 'planes',
       })
     },
     moreUsed() {
@@ -200,7 +215,15 @@ button {
   height: 4rem !important;
   width: 100%;
   font-size: 1.2rem !important;
-  background-color: #F30C6A !important; 
+  background-color: #F30C6A; 
   color: white;
+}
+
+.btn-switch {
+  border-radius: 0.3rem !important;
+  height: 4rem !important;
+  width: 100%;
+  background-color: black; 
+  font-size: 1.2rem !important;
 }
 </style>

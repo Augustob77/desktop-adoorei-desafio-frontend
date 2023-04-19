@@ -11,12 +11,7 @@
             <p> Seja bem vindo a sua conta de hospedagem</p>
             
             <div align="center">
-            <video width="900" height="600" controls="controls" autoplay="autoplay">
-                <source src="https://www.youtube.com/watch?v=U5Z8mSc4pLk&list=PLiWHHufbVh1gRWfeW8MPc_vckjhILhMpI&index=4" type="video/mp4">
-                <object data="" width="900" height="600">
-                <embed width="900" height="600" src="https://www.youtube.com/watch?v=U5Z8mSc4pLk&list=PLiWHHufbVh1gRWfeW8MPc_vckjhILhMpI&index=4">
-                </object>
-            </video>
+              <iframe src="https://www.youtube.com/embed/-5PlzQXQymk" frameborder="0" width="900" height="600"></iframe>
             </div>
             
             <p> Caso tenha alguma dúvida, visite nossa central de ajuda</p>
