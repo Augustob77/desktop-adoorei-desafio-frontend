@@ -2,20 +2,21 @@
   <div>
     <div class="header">
       <img src="../assets/logo.png" alt="">
-      <img src="../assets/avatar.png" class="avatar" align="right" alt="">
+       <a href="/"> <img src="../assets/avatar.png" class="avatar" align="right" alt=""> </a>
     </div>
+
     <div class="card-container">
         <b-row>
-        <b-col cols="12">
-            <h1> {{ 'Olá' + ' ' + userName + ','}} </h1>
-            <p> Seja bem vindo a sua conta de hospedagem</p>
-            
-            <div align="center">
-              <iframe src="https://www.youtube.com/embed/-5PlzQXQymk" frameborder="0" width="900" height="600"></iframe>
-            </div>
-            
-            <p> Caso tenha alguma dúvida, visite nossa central de ajuda</p>
-        </b-col>
+          <b-col cols="12">
+              <h1> {{ 'Olá' + ' ' + userName + ','}} </h1>
+              <p> Seja bem vindo a sua conta de hospedagem</p>
+              
+              <div align="center">
+                <iframe src="https://www.youtube.com/embed/-5PlzQXQymk" frameborder="0" width="900" height="600"></iframe>
+              </div>
+              
+              <p> Caso tenha alguma dúvida, visite nossa central de ajuda</p>
+          </b-col>
         </b-row>
     </div>
   </div>

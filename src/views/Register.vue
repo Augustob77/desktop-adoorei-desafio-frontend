@@ -30,12 +30,12 @@
             <b-form-group label="Celular">
               <b-form-input
                 id="cell"
-                type="text-mask"
+                type="text"
                 class="my-4"
-                :mask="'(##) #####-####'"
                 placeholder="(99) 99999-0000"
                 size="lg"
                 v-model="form.cell"
+                v-mask="'(##) #####-####'"
               />
             </b-form-group>
 
@@ -55,7 +55,7 @@
                 id="password"
                 type="password"
                 size="lg"
-                v-model="form.password"
+                v-model.trim="form.password"
               />
 
               <div class="my-2">
@@ -69,7 +69,7 @@
                 type="password"
                 class="my-2"
                 size="lg"
-                v-model="form.passwordConfirm"
+                v-model.trim="form.passwordConfirm"
               />
             </b-form-group>
 
